@@ -1,24 +1,35 @@
 # Zeus
-## Blazingly Fast Containers
+
+## Lightning Fast Containers
 
 ### Description
-Zeus is a container runtime built in Golang, designed to deliver the fastest container experience ever. It optimizes container startup times and resource management, ensuring a lightning-fast performance.
+
+Zeus is a container runtime built in Golang. The low-level runtime is `runz`.
 
 ### Features
 
-- **Unmatched Speed**: Leverages Golang's concurrency model for optimized container startup times and resource management.
-- **Lightweight**: Provides a streamlined experience with minimal overhead.
-- **Efficient Resource Usage**: Uses advanced algorithms for CPU and memory allocation, ensuring efficient utilization and better scalability.
-- **Seamless Integration**: Compatible with popular orchestration tools and container management platforms.
-- **Security**: Incorporates modern security practices including container isolation and secure image handling.
-- **Easy Configuration**: Simplified configuration and management through a user-friendly CLI and intuitive API.
+- **Lightweight**: Minimal overhead for container operations.
 
-### Use Cases
+### Issues
 
-- **Development**: Ideal for rapid container spin-up times and efficient resource management during development.
-- **Production**: Suitable for high-performance environments requiring low-latency container operations.
+- **No Networking**: Containers cannot communicate with the outside world.
+- **UTS Namespace**: Containers cannot change their hostname.
+- **IPC Namespace**: Containers cannot communicate with each other.
+- **Issues found**: Check TODOs in the code.
 
-### Getting Started
+### Installation
 
-### Community & Support
+- Get inside `filesystems` directory and run the arch or ubuntu script after geting docker.
+- Run the following to get the script to a workable state
+```bash
+./install.sh
+```
+- Then,to test the installation, run the following
+- This tests resource isolation, PID namespace, and memory limits.
+- Shows the completion of my minor
+```bash
+sudo cp ./testing/cpumemeater ./filesystems/arch/bin/   # Eats up CPU for testing
+sudo cp ./testing/forker ./filesystems/arch/bin/        # Makes multiple child processes to fill up PID namespace and memory
+sudo cp ./testing/leach ./filesystems/arch/bin/         # Eats up memory for testing
+```
 

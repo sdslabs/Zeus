@@ -1,4 +1,5 @@
 filesystems/arch/
 filesystems/fish/
 build/
-testing/
+archvolume/
+ubuntu/

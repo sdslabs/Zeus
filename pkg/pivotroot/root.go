@@ -6,6 +6,8 @@ import (
 	"syscall"
 )
 
+//Just pivots root with a mount syscall
+
 func RootPivoter(newroot string) error {
 	putold := filepath.Join(newroot, "/.pivot_root")
 

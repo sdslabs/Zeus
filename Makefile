@@ -8,13 +8,19 @@ build:
 	mkdir build
 	cd build && \
 	go build -o zeus ../cmd/main.go 
-	make arch
+	sudo make arch
 
 arch:
-	./build/zeus ./filesystems/arch
+	sudo ./build/zeus ./filesystems/arch
+
+arch_test:
+	sudo ./build/zeus ./filesystems/arch 100M 1000
 
 fish:
-	./build/zeus ./filesystems/fish
+	sudo ./build/zeus ./filesystems/fish
+
+ubuntu:
+	sudo ./build/zeus ./filesystems/ubuntu
 
 clean:
-	rm -rf build
+	sudo rm -rf build
